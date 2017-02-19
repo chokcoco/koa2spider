@@ -9,9 +9,13 @@ const onerror = require('koa-onerror');
 const bodyparser = require('koa-bodyparser')();
 const logger = require('koa-logger');
 
+
 const index = require('./routes/index');
 const users = require('./routes/users');
 const check = require('./routes/check');
+const spider = require('./spider/index');
+
+spider();
 
 // middlewares
 app.use(convert(bodyparser));
