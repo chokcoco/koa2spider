@@ -15,7 +15,7 @@ const users = require('./routes/users');
 const check = require('./routes/check');
 const spider = require('./spider/index');
 
-spider();
+spider.init();
 
 // middlewares
 app.use(convert(bodyparser));
@@ -43,7 +43,7 @@ app.use(router.routes(), router.allowedMethods());
 // response
 
 app.on('error', function(err, ctx){
-  console.log(err)
+  console.log(err);
   logger.error('server error', err, ctx);
 });
 
