@@ -25,8 +25,10 @@
   },
   "devDependencies": {
     "cheerio": "^0.22.0",
+    "mocha": "^3.2.0",
     "nodemon": "^1.8.1",
     "phantomjs": "^2.1.7",
-    "superagent": "^3.4.4"
+    "superagent": "^3.4.4",
+    "thunkify": "^2.1.2"
   }
 }

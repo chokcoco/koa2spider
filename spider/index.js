@@ -15,6 +15,10 @@ let entryParams = {
 
 let _singers = [];
 
+function funcEntry () {
+
+}
+
 /**
  * the entry of the spider
  * @return {}
@@ -37,18 +41,15 @@ function spiderEntry(url) {
  * @return {}
  */
 function singerNameGet(context) {
-	// let sliceFun = Array.prototype.slice;
 	let $ = cheerio.load(context.data.html);
 	let artistList = $('.artist .image a');
 
-	// let lists = [].prototype.slice.call(artistList);
-
 	Array.prototype.slice.call(artistList).forEach(function(value, index) {
 		let href = value.attribs.href;
-		console.log('value', value);
+		_singers.push(href);
 	})
-
-	// console.log(artistList);
+	console.log(_singers);
+	return _singers;
 }
 
 let spider = (function() {

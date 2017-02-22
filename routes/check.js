@@ -1,10 +1,10 @@
-var router = require('koa-router')();
+const router = require('koa-router')();
+const spider = require('../spider/index');
 
 router.get('/', function (ctx, next) {
-  	ctx.body = {
-		username: 'Coco',
-		age: 18
-	}
+	var singers = spider.init();
+
+  	ctx.body = singers || 'abc';
 });
 
 module.exports = router;
