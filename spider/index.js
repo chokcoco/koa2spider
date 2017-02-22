@@ -1,6 +1,7 @@
 const superagent = require('superagent');
 const cheerio = require('cheerio')
 
+
 // set params
 let entryUrl = 'http://i.xiami.com/musician/artists?spm=a1z1s.7400858.1392350033.4.9rgvv0&genre=16&gender=ALL&location=ALL&order=0&page=1&json=1';
 let entryParams = {
@@ -15,8 +16,11 @@ let entryParams = {
 
 let _singers = [];
 
-function funcEntry () {
-
+function entry () {
+	for(let i=1; i<=10; i++) {
+		let url = 'http://i.xiami.com/musician/artists?spm=a1z1s.7400858.1392350033.4.9rgvv0&genre=16&gender=ALL&location=ALL&order=0&page=' + i + '&json=1';
+		spiderEntry(url);
+	}
 }
 
 /**
@@ -48,15 +52,14 @@ function singerNameGet(context) {
 		let href = value.attribs.href;
 		_singers.push(href);
 	})
-	console.log(_singers);
-	return _singers;
+	console.log('_singers.length', _singers.length);
 }
 
 let spider = (function() {
 
 	return {
 		init() {
-			spiderEntry(entryUrl);
+			entry ();
 		}
 	}
 })();
