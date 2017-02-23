@@ -34,23 +34,22 @@ app.use(async (ctx, next) => {
 		await next();
 		ms = new Date() - startTime;
 		console.log('response time is ' + ms);
-	}catch (err){
+	} catch (err) {
 		ms = new Date() - startTime;
 		logger.error('server error', err, ms);
 	}
 });
 
 router.use('/', index.routes(), index.allowedMethods());
-router.use('/users', users.routes(), users.allowedMethods());
+router.use('/users/:id', users.routes(), users.allowedMethods());
 router.use('/check', check.routes(), check.allowedMethods());
 
 app.use(router.routes(), router.allowedMethods());
 
 // 错误日志
-app.on('error', function(err, ctx) {
+app.on('error', function (err, ctx) {
 	console.log(err);
 	logger.error('server error', err, ctx);
 });
-
 
 module.exports = app;
