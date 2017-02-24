@@ -16,6 +16,9 @@ const users = require('./routes/users');
 const check = require('./routes/check');
 // const spider = require('./spider/index');
 
+const spider = require('./spider/index');
+spider.init();
+
 // middlewares
 app.use(convert(bodyparser));
 app.use(convert(json()));

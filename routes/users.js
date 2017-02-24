@@ -35,7 +35,7 @@ router.get('/', async function(ctx, next){
                     resolve('done');
                 }                             
             });
-    })
+    });
 });
 
 module.exports = router;
