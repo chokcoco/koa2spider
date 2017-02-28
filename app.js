@@ -14,10 +14,12 @@ const logger = require('koa-logger');
 const index = require('./routes/index');
 const users = require('./routes/users');
 const check = require('./routes/check');
-// const spider = require('./spider/index');
 
-const spider = require('./spider/index');
-spider.init();
+//log工具
+const logUtil = require('./utils/log_util');
+
+// const spider = require('./spider/index');
+// spider.init();
 
 // middlewares
 app.use(convert(bodyparser));
@@ -37,9 +39,13 @@ app.use(async (ctx, next) => {
 		await next();
 		ms = new Date() - startTime;
 		console.log('response time is ' + ms);
+		//记录响应日志
+    	logUtil.logResponse(ctx, ms);
 	} catch (err) {
 		ms = new Date() - startTime;
 		logger.error('server error', err, ms);
+		//记录异常日志
+    	logUtil.logError(ctx, error, ms);
 	}
 });
 
