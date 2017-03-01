@@ -15,7 +15,7 @@ const index = require('./routes/index');
 const users = require('./routes/users');
 const check = require('./routes/check');
 
-//log工具
+// log工具
 const logUtil = require('./utils/log_util');
 
 // const spider = require('./spider/index');
@@ -43,7 +43,6 @@ app.use(async (ctx, next) => {
     	logUtil.logResponse(ctx, ms);
 	} catch (err) {
 		ms = new Date() - startTime;
-		logger.error('server error', err, ms);
 		//记录异常日志
     	logUtil.logError(ctx, error, ms);
 	}

@@ -31,7 +31,6 @@ router.get('/', async function(ctx, next){
                             <p>IMID：${data.imid}</p>
                             <p>PASSPORT：${data.passport}</p>
                             `;
-
                     resolve('done');
                 }                             
             });
