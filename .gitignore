@@ -1,3 +1,4 @@
 node_modules/
 git-pull.bat
 git-push.bat
+logs/

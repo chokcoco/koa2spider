@@ -14,6 +14,7 @@ const logger = require('koa-logger');
 const index = require('./routes/index');
 const users = require('./routes/users');
 const check = require('./routes/check');
+const report = require('./routes/report');
 
 // log工具
 const logUtil = require('./utils/log_util');
@@ -31,6 +32,7 @@ app.use(views(__dirname + '/views', {
 	extension: 'jade'
 }));
 
+// 日志记录
 app.use(async (ctx, next) => {
 	let startTime = new Date();
 	let ms = 0;
@@ -44,6 +46,7 @@ app.use(async (ctx, next) => {
 	} catch (err) {
 		ms = new Date() - startTime;
 		//记录异常日志
+		console.log(err);
     	logUtil.logError(ctx, error, ms);
 	}
 });
@@ -51,6 +54,7 @@ app.use(async (ctx, next) => {
 router.use('/', index.routes(), index.allowedMethods());
 router.use('/users/:id', users.routes(), users.allowedMethods());
 router.use('/check', check.routes(), check.allowedMethods());
+router.use('/report', report.routes(), report.allowedMethods());
 
 app.use(router.routes(), router.allowedMethods());
 
