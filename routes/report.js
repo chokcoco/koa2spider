@@ -19,7 +19,7 @@ router.get('/', async function (ctx, next) {
         console.log(err);
     }
     
-    ctx.body = "123";
+    ctx.body = "Done";
 
 }, async function (ctx, next) {
     let querysObj = ctx.query;
