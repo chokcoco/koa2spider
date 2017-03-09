@@ -1,8 +1,8 @@
 /**
  * 接受事件上报
  */
-import superagent from'superagent';
-import util from'../utils/util';
+import superagent from 'superagent';
+import util from '../utils/util';
 import mongoDb from '../db/mongoose';
 
 const router = require('koa-router')();
