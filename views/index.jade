@@ -1,5 +1,29 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  section.hero.is-medium.is-primary.is-bold
+    div.hero-body
+      div.container
+        h1.title 接口质量监控报警系统
+        h2.subtitle 接口质量监控报警系统
+
+  div.chart-content
+    div#container      
+
+    div#container_error 
+          
+  footer.footer
+    div.contianer
+      div.content.has-text-centered
+        p
+          strong 接口质量监控报警系统
+          span &nbsp;by
+          a(href="https://github.com/chokcoco") &nbsp;Coco&nbsp;
+          span .The source code is licensed
+          a(href="http://opensource.org/licenses/mit-license.php") &nbsp;MIT&nbsp;
+          span .
+  
+  script.
+    window.chartData = JSON.parse('#{data.data}'.replace(/&quot;/g, "\""));   
+    console.log(window.chartData)
+    

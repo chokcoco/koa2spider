@@ -1,8 +1,14 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px tahoma,Arial,Roboto,'Droid Sans','Helvetica Neue','Droid Sans Fallback','Hiragino Sans GB','Heiti SC',sans-self;
 }
 
-a {
-  color: #00B7FF;
+.chart-content  {
+  min-height: 200px;
+}
+
+#container,
+#container_error  {
+  width: 1200px;
+  margin: 0 auto;
+  height: 400px;
 }

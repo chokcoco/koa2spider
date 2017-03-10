@@ -7,7 +7,7 @@ const superagent = require('superagent');
 let info = null;
 let id = 0;
 
-router.get('/', async function(ctx, next){
+router.get('users/:id', async function(ctx, next){
     id = ctx.params.id;
 
     ctx.user = await next(); 

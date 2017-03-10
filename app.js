@@ -52,9 +52,9 @@ app.use(async (ctx, next) => {
 });
 
 router.use('/', index.routes(), index.allowedMethods());
-router.use('/users/:id', users.routes(), users.allowedMethods());
-router.use('/check', check.routes(), check.allowedMethods());
-router.use('/report', report.routes(), report.allowedMethods());
+router.use('/', users.routes(), users.allowedMethods());
+router.use('/', check.routes(), check.allowedMethods());
+router.use('/', report.routes(), report.allowedMethods());
 
 app.use(router.routes(), router.allowedMethods());
 

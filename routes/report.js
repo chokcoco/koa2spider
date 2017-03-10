@@ -12,13 +12,13 @@ const router = require('koa-router')();
  */
 mongoDb.connect();
 
-router.get('/', async function (ctx, next) {
+router.get('report', async function (ctx, next) {
     try {
         await next();
     }catch (err) {
         console.log(err);
     }
-    
+    ctx.state = 200;
     ctx.body = "Done";
 
 }, async function (ctx, next) {
