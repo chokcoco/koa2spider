@@ -7,7 +7,7 @@ body {
 }
 
 #container,
-#container_error  {
+#container_error {
   width: 1200px;
   margin: 0 auto;
   height: 400px;

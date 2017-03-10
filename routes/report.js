@@ -18,8 +18,9 @@ router.get('report', async function (ctx, next) {
     }catch (err) {
         console.log(err);
     }
-    ctx.state = 200;
-    ctx.body = "Done";
+    
+    ctx.res.writeHead(200);
+    ctx.res.end();
 
 }, async function (ctx, next) {
     let querysObj = ctx.query;
