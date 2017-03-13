@@ -1,9 +1,12 @@
 ## 上报协议
 
-- URl：http://172.26.17.3:3010/report
-- params：
+- URl ：`http://172.26.17.3:3010/report`
+- params ：
     - reportType：{Number} 1 - 任务体系，2 - 碎钻商城
-    - reportValue： {String} 接口URL
+    - reportValue： {String} 接口 URL
+    - appVersion: {String} APP 版本
+    - phoneType: {Number} 1 - IOS，2 - Android
+- example: `http://172.26.17.3:3010/report?reportType=1&reportValue=xxxx&appVersion=6.0.9&phoneType=1`
 
 ## 查询数据
 

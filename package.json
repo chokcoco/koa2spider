@@ -5,7 +5,7 @@
   "scripts": {
     "start": "./node_modules/.bin/nodemon bin/run",
     "koa": "./node_modules/.bin/runkoa bin/www",
-    "pm2": "pm2 start bin/run ",
+    "pm2": "pm2 start pm2.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
@@ -34,6 +34,7 @@
     "mongoose": "^4.8.5",
     "nodemon": "^1.8.1",
     "phantomjs": "^2.1.7",
+    "pm2": "^2.4.2",
     "superagent": "^3.4.4",
     "thunkify": "^2.1.2"
   }

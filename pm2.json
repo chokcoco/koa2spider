@@ -1,0 +1,16 @@
+{
+    "apps": [
+        {
+            "name": "koa2spider", 
+            "script": "./bin/run", 
+            "cwd": "./", // 根目录
+            "log_date_format": "YYYY-MM-DD HH:mm Z",
+            "watch": [ // 需要监控的目录
+                "bin",
+                "public",
+                "routes",
+                "views"
+            ]
+        }
+    ]
+}
